@@ -31,8 +31,4 @@ public class Splash extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-    }
 }
