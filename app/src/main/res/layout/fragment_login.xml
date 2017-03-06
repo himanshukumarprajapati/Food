@@ -16,7 +16,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_gravity="center"
-                android:indeterminateTint="@color/tab_unselected"
+
                 android:indeterminateTintMode="src_in"
                 android:visibility="gone" />
             <ImageView
@@ -50,8 +50,6 @@
                 android:gravity="center"
                 android:singleLine="true"
                 android:inputType="textEmailAddress"
-                android:textColor="@color/windowBackground"
-                android:textColorHint="@color/edit_hint"
                 android:background="#00000000"/>
             <ImageView
                 android:layout_width="match_parent"
@@ -74,8 +72,6 @@
                 android:layout_below="@id/edit_uid"
                 android:layout_marginRight="10dp"
                 android:hint="Passsword"
-                android:textColor="@color/windowBackground"
-                android:textColorHint="@color/edit_hint"
                 android:background="#00000000"/>
 
             <ImageView
@@ -94,8 +90,6 @@
                 android:text="LOGIN"
                 android:layout_below="@id/edit_password"
                 android:gravity="center"
-                android:layout_marginLeft="@dimen/padding_20dp"
-                android:layout_marginRight="@dimen/padding_20dp"
                 android:textColor="#FFFF"
                 android:layout_marginTop="10dp"
                 />
@@ -113,7 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sign Up"
-                android:layout_marginLeft="@dimen/detail_margin_5dp"
+
                 android:layout_toEndOf="@+id/text_registration"
                 android:layout_below="@id/view2"
                 android:textColor="#FFFFFF"
@@ -127,7 +121,7 @@
                 android:layout_height="50dp"
                 android:text="Don't have an account?"
                 android:layout_below="@id/view2"
-                android:textColor="@color/edit_hint"
+
                 android:layout_marginLeft="30dp"
                 android:textSize="16sp"
                 android:layout_marginTop="15dp"/>
