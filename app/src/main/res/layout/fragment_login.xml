@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/logo_reg"
+                android:src="@drawable/login_logo"
                 android:layout_marginTop="60dp"
                 />
             <View
@@ -110,7 +110,7 @@
 
                 android:layout_toEndOf="@+id/text_registration"
                 android:layout_below="@id/view2"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textSize="20sp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="15dp"

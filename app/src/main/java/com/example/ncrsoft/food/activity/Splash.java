@@ -7,6 +7,8 @@ import android.os.Bundle;
 
 import com.example.ncrsoft.food.R;
 
+//import com.example.ncrsoft.food.R;
+
 public class Splash extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 3000;
     @Override
@@ -20,7 +22,7 @@ public class Splash extends AppCompatActivity {
             public void run() {
                 // This method will be executed once the timer is over
                 // Start your app main activity
-                Intent i = new Intent(Splash.this, MainActivity.class);
+                Intent i = new Intent(Splash.this, LoginActivity.class);
                 startActivity(i);
 
                 // close this activity
