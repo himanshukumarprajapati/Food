@@ -130,9 +130,9 @@ public class Login_Fragment extends Fragment implements View.OnClickListener,Pos
         try {
             JSONObject jsonObject = new JSONObject(resp);
             status = jsonObject.getString("Status");
-            if (status.equalsIgnoreCase("true")) {
-                JSONObject jsonObject1 = jsonObject.getJSONObject("user_Data");
-                mpPref.setUserName("user", jsonObject1.getString("user_email"));
+            if (status.equalsIgnoreCase("false")) {
+              //  JSONObject jsonObject1 = jsonObject.getJSONObject("user_Data");
+              //  mpPref.setUserName("user", jsonObject1.getString("user_email"));
                 progressBar.setVisibility(View.GONE);
                 Intent intent = new Intent(getActivity(), ProfileActivity.class);
                 intent.putExtra("from", "login");
