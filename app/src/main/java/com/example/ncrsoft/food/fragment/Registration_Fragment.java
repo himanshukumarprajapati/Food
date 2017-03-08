@@ -51,7 +51,7 @@ public class Registration_Fragment extends Fragment implements PostDataExecute {
 
         rootView = inflater.inflate(R.layout.fragment_registration, container, false);
         init(rootView);
-        isInternet = ConnectionManager.isNetworkOnline(getActivity());
+           isInternet = ConnectionManager.isNetworkOnline(getActivity());
         cancle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,7 +76,7 @@ public class Registration_Fragment extends Fragment implements PostDataExecute {
             Toast.makeText(getActivity(), "Please enter valid first Name", Toast.LENGTH_SHORT).show();
             return false;
         }
-            else if(pass.equals("") || pass.length()<5 || !pass.equals(cpass)){
+            else if(pass.equals("") || pass.length()<5 ){
                 Toast.makeText(getActivity(),"please enter valid password",Toast.LENGTH_SHORT).show();
                 return false;
             }
@@ -102,18 +102,26 @@ public class Registration_Fragment extends Fragment implements PostDataExecute {
     private void init(View v) {
         fname = (EditText)v.findViewById(R.id.txt_firstname);
         password = (EditText)v.findViewById(R.id.txt_password);
+        submit = (Button)v.findViewById(R.id.button_registration);
+        cancle = (TextView)v.findViewById(R.id.text_sign_up);
+        firstName =fname.getText().toString();
+        pass = password.getText().toString();
+        progressBar = (ProgressBar) v.findViewById(R.id.progressOther);
+
 
     }
 
 
     @Override
     public void onPostRequestSuccess(int method, String resp) {
-
+        Toast.makeText(getActivity(),resp,Toast.LENGTH_SHORT).show();
+        progressBar.setVisibility(View.GONE);
     }
 
     @Override
     public void onPostRequestFailed(int method, String resp) {
-
+        Toast.makeText(getActivity(),resp,Toast.LENGTH_SHORT).show();
+        progressBar.setVisibility(View.GONE);
     }
 
     private void onRequestLogin() {
@@ -126,10 +134,10 @@ public class Registration_Fragment extends Fragment implements PostDataExecute {
                     .add("page", String.valueOf(1))
                     .build();
             Gson gson = new Gson();
-            Log.e("myname", email_id);
+            Log.e("myname", firstName);
             String JsonBody = gson.toJson(new RegistrationData(firstName, pass));
             new ExecutePostRequest(getActivity(), 1, formBody, this, JsonBody)
-                    .execute("http://api.ncrmenu.com/Emenu.svc/CreateUser?");
+                    .execute("http://api.ncrmenu.com/Emenu.svc/CreateUser?UserName=&Password=");
 
         } else {
             final Toast tag = Toast.makeText(getActivity().getApplicationContext(), "No Internet Connection", Toast.LENGTH_SHORT);
