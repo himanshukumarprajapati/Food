@@ -4,14 +4,15 @@
     android:id="@+id/activity_splash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/tifinsplash"
     tools:context="com.example.ncrsoft.food.activity.Splash">
 
-    <ImageView
-        android:id="@+id/imgLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:src="@drawable/zopacsplash" />
+    <!--<ImageView-->
+        <!--android:id="@+id/imgLogo"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:src="@drawable/tifinsplash" />-->
 
     <TextView
         android:layout_width="fill_parent"

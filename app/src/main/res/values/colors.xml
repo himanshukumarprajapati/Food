@@ -22,4 +22,9 @@
     <color name="left_nav_drawer_main_color1">#00A5FF</color>
     <color name="tab_unselected">#117AB3</color>
     <color name="edit_hint">#8083A1</color>
+    <color name="black">#000000</color>
+    <color name="orange">#FA0</color>
+    <color name="white">#FFF</color>
+    <color name="green">#ADFF2F</color>
+
 </resources>

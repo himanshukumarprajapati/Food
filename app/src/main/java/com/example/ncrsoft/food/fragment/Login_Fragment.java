@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ncrsoft.food.R;
+import com.example.ncrsoft.food.activity.MyGridActivity;
 import com.example.ncrsoft.food.activity.ProfileActivity;
 import com.example.ncrsoft.food.utils.ConnectionManager;
 import com.example.ncrsoft.food.utils.ExecutePostRequest;
@@ -134,7 +135,7 @@ public class Login_Fragment extends Fragment implements View.OnClickListener,Pos
               //  JSONObject jsonObject1 = jsonObject.getJSONObject("user_Data");
               //  mpPref.setUserName("user", jsonObject1.getString("user_email"));
                 progressBar.setVisibility(View.GONE);
-                Intent intent = new Intent(getActivity(), ProfileActivity.class);
+                Intent intent = new Intent(getActivity(), MyGridActivity.class);
                 intent.putExtra("from", "login");
                 startActivity(intent);
                 getActivity().finish();
