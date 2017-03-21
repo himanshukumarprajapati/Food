@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/zopacsplash"
-    tools:context="com.example.ncrsoft.food.activity.MyGridActivity">
+    tools:context="com.example.ncrsoft.zopac.activity.MyGridActivity">
     <include
         layout="@layout/header_main_paige_layout"
         android:id="@+id/include_DetailPage"

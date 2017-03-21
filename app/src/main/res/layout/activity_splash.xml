@@ -4,8 +4,8 @@
     android:id="@+id/activity_splash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/tifinsplash"
-    tools:context="com.example.ncrsoft.food.activity.Splash">
+    android:background="@drawable/zopacsplash"
+    tools:context="com.example.ncrsoft.zopac.activity.Splash">
 
     <!--<ImageView-->
         <!--android:id="@+id/imgLogo"-->
