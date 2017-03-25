@@ -7,4 +7,18 @@
     <string name="openDrawer">Open</string>
     <string name="closeDrawer">Close</string>
 
+
+
+    <string-array name="images">
+       <item>Electornocs</item>
+        <item>Appliances</item>
+        <item>furniture</item>
+        <item>Bags</item>
+        <item>Women</item>
+        <item>Baby</item>
+        <item>Men</item>
+        <item>Home</item>
+        <item>Book</item>
+    </string-array>
+
 </resources>
