@@ -24,8 +24,13 @@ import com.google.gson.Gson;
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.RequestBody;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,7 +43,10 @@ public class ElectronicsFragment extends Fragment implements PostDataExecute{
     private View loadMoreFooter;
     private GridLayoutManager manager;
     private OtherRecycleViewAdapter otherRecycleViewAdapter;
-    private ArrayList<MyPojo> arrayList = new ArrayList<>();
+     ArrayList<MyPojo> arrayList = new ArrayList<>();
+    String STATUS = "StatusCode";
+    String CATEGORY_ID = "CategoryId";
+    String CATEGORY_NAME = "CategoryName";
 
     public ElectronicsFragment() {
         // Required empty public constructor
@@ -60,13 +68,13 @@ public class ElectronicsFragment extends Fragment implements PostDataExecute{
         otherRecyclerView.setAdapter(otherRecycleViewAdapter);
         loadMoreFooter = rootView.findViewById(R.id.include_load_more_footer);
         Boolean isInternet = ConnectionManager.isNetworkOnline(getActivity());
-        try {
+      /*  try {
             otherRecycleViewAdapter=new OtherRecycleViewAdapter(getActivity(),arrayList);
             otherRecyclerView.setAdapter(otherRecycleViewAdapter);
 
         }catch (Exception e) {
 
-        }
+        }*/
         if (isInternet) {
             progressBar.setVisibility(View.VISIBLE);
 
@@ -98,20 +106,37 @@ public class ElectronicsFragment extends Fragment implements PostDataExecute{
 
     @Override
     public void onPostRequestSuccess(int method, String resp) {
+
+
         try{
-            Gson gson = new Gson();
+            JSONArray jArray = new JSONArray(resp);
+            for(int i=0;i<jArray.length();i++) {
+                JSONObject json_data = jArray.getJSONObject(i);
+                MyPojo my = new MyPojo();
 
-//       myPoJoModels=gson.fromJson(resp,MyPojo.class);
-//       myPoJoModels.getActors();
 
-            MyPojo my = gson.fromJson(resp,MyPojo.class);
-           // Log.e("DATATATATA", my);
-            arrayList.add(my);
-            progressBar.setVisibility(View.GONE);
-            otherRecycleViewAdapter.notifyDataSetChanged();
-        }catch (Exception e){
+           //     fishData.StatusCode = json_data.getString(STATU);
+               // fishData.CategoryName = json_data.getString(CATEGORY_NAME);
+               my.CategoryId = json_data.getString(CATEGORY_ID);
+           //     fishData.setCategoryId(json_data.getString(CATEGORY_ID));
+
+               /* fishData.sizeName= json_data.getString("size_name");
+                fishData.price= json_data.getInt("price");*/
+                arrayList.add(i,my);
+
+
+
+                progressBar.setVisibility(View.GONE);
+                otherRecycleViewAdapter.notifyDataSetChanged();
+
+
+            }
+            } catch (JSONException e1) {
+            e1.printStackTrace();
 
         }
+//        otherRecycleViewAdapter=new OtherRecycleViewAdapter(getActivity(),arrayList);
+//        arrayList.add(otherRecycleViewAdapter);
     }
 
     @Override
@@ -119,18 +144,22 @@ public class ElectronicsFragment extends Fragment implements PostDataExecute{
 
     }
 
+
+
     public class MyPojo
           {
           private String StatusCode;
           private String CategoryName;
           private String CategoryId;
 
-            public MyPojo(String statusCode, String categoryName, String categoryId) {
+              /*  public MyPojo(String statusCode, String categoryName, String categoryId) {
                 this.StatusCode = statusCode;
                 this.CategoryName = categoryName;
                 this.CategoryId = categoryId;
-            }
-        public String getStatusCode ()
+            }*/
+
+
+              public String getStatusCode ()
         {
             return StatusCode;
         }
